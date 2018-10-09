@@ -6,12 +6,12 @@ var myname:string="Rishabh";
 let age:number=22;
 let check:boolean=true;
 
-//Any can be take any type also change the type at runtime
+//changes can be done at runtime
 let notsure:any='Rawat';
 notsure=true;
 notsure=25;
 
-//Define the constant value 
+//Define the constant value we can't change the sex variable value
 const sex:string='M'
 
 console.log(myname);
@@ -73,6 +73,7 @@ x=[true,25];
 console.log('-------------------------------------------------------')
 
 //Enum  enumeration type define the more mening full of same type
+//default value start with 0 and futher values incement by default
 enum days {sunday=1,monday,tuesday,wednesday,thusday,friday,saturday};
 let mon:number=days.monday;
 console.log(mon);
@@ -90,7 +91,7 @@ console.log("text "+myobj['a']) //output 11 and so on
 
 
 //function declartion in Typescript
-function printname(str:string):void //return type void and it us named function
+function printname(str:string):void //return type void and it is named function
 {
 
     if(str.charAt(0)=='R' || str.charAt(0)=='r')
@@ -152,7 +153,7 @@ class Car {
 
     //field
     private engine:string;
-    //constructor    //we cannot overload the constructor in typescipt only single constructor there in single class
+    //constructor    //we cannot overload the constructor in typescipt only single constructor exists in single class
     constructor(engine:string) {
        this.engine = engine;
     }
