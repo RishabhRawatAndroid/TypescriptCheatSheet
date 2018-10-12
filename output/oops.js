@@ -137,3 +137,9 @@ var BMW = /** @class */ (function () {
 }());
 var carobj = new BMW();
 console.log(carobj.getname());
+//For using the namespace code we use like
+/// <reference path="./namespacecode.ts"/>
+var getname = Calculator.addname('Rishabh', 'Rawat');
+console.log(getname);
+var sum = new Calculator.SimpleCalculator();
+console.log(sum.returnadd(10, 15));

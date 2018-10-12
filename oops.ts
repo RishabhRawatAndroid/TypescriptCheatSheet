@@ -131,6 +131,8 @@ interface Car
     getenginecc():number;
 }
 
+
+
 class  BMW implements Car{
     carname: string='BMW';   
      carcountry: string='Germany';
@@ -148,3 +150,13 @@ class  BMW implements Car{
 
 var carobj:Car=new BMW();
 console.log(carobj.getname())
+
+//For using the namespace code we use like
+/// <reference path="./namespacecode.ts"/>
+
+let getname=Calculator.addname('Rishabh', 'Rawat');
+console.log(getname);
+
+let sum:Calculator.SimpleCalculator=new Calculator.SimpleCalculator();
+console.log(sum.returnadd(10, 15));
+
