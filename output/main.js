@@ -6,11 +6,11 @@ var myname = "Rishabh";
 //myname=1996;  //Error because we already explicity type of string
 var age = 22;
 var check = true;
-//Any can be take any type also change the type at runtime
+//changes can be done at runtime
 var notsure = 'Rawat';
 notsure = true;
 notsure = 25;
-//Define the constant value 
+//Define the constant value we can't change the sex variable value
 var sex = 'M';
 console.log(myname);
 console.log(age);
@@ -55,6 +55,7 @@ x = [true, 25];
 //x = [false, 0, 3, 3, true]; //error because length is more 
 console.log('-------------------------------------------------------');
 //Enum  enumeration type define the more mening full of same type
+//default value start with 0 and futher values incement by default
 var days;
 (function (days) {
     days[days["sunday"] = 1] = "sunday";
@@ -93,3 +94,42 @@ var printanothername = function (str) {
         return 'No';
 };
 printanothername("Rishabh");
+//rest parameter function
+//rest parameters act as placeholders for multiple arguments of the same type.
+var restfuntion = function () {
+    var inttype = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        inttype[_i] = arguments[_i];
+    }
+    for (var i_3 = 0; i_3 <= inttype.length - 1; i_3++) {
+        console.log(inttype[i_3]);
+    }
+};
+restfuntion(4, 5, 2, 6, 9, 5, 6, 2, 4);
+//Default paramter function
+function defaultfun(num1, num2) {
+    if (num1 === void 0) { num1 = 0; }
+    if (num2 === void 0) { num2 = 0; }
+    return num1 + num2;
+}
+//lamda function very consice function  {The fat arrow notation/lambda notation (=>)}
+var lamdafun = function (x) { return x * x; };
+// //TypeScript also supports defining a function with the built-in JavaScript constructor called Function ().
+// let mul=new Function()
+// {
+// }
+// mul()
+//Classes in the TypeScript
+var Car = /** @class */ (function () {
+    //constructor    //we cannot overload the constructor in typescipt only single constructor exists in single class
+    function Car(engine) {
+        this.engine = engine;
+    }
+    //function
+    Car.prototype.disp = function () {
+        console.log("Engine is  :   " + this.engine);
+    };
+    return Car;
+}());
+var carobj = new Car("Land Rover");
+carobj.disp();

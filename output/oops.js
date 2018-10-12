@@ -12,7 +12,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 //export means we can use this class in another file we need only one thing to impoet this class is 
 ///// import {User, AnotherClassName} from oops;
 var User = /** @class */ (function () {
@@ -66,6 +66,7 @@ console.log(cobj.getdetails());
 var MobilePhone = /** @class */ (function () {
     function MobilePhone() {
     }
+    //similar for both mobile apple and samsung
     MobilePhone.prototype.getcountry = function () {
         return 'Made in India';
     };
@@ -117,3 +118,22 @@ var appobj = new Apple();
 console.log(appobj.getcompany());
 console.log(appobj.getprocessor());
 console.log(appobj.getcountry());
+var BMW = /** @class */ (function () {
+    function BMW() {
+        this.carname = 'BMW';
+        this.carcountry = 'Germany';
+        this.carenginecc = 2050;
+    }
+    BMW.prototype.getname = function () {
+        return this.carname;
+    };
+    BMW.prototype.getcountry = function () {
+        return this.carcountry;
+    };
+    BMW.prototype.getenginecc = function () {
+        return this.carenginecc;
+    };
+    return BMW;
+}());
+var carobj = new BMW();
+console.log(carobj.getname());

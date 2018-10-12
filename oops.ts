@@ -119,3 +119,32 @@ console.log(appobj.getprocessor())
 console.log(appobj.getcountry())
 
 
+//from interface we can achiver the  abstraction 100%
+interface Car
+{
+    carname:string;
+    carcountry:string;
+    carenginecc:number;
+
+    getname():string;
+    getcountry():string;
+    getenginecc():number;
+}
+
+class  BMW implements Car{
+    carname: string='BMW';   
+     carcountry: string='Germany';
+     carenginecc: number=2050;
+    getname(): string {
+    return this.carname;    
+    }
+    getcountry(): string {
+        return this.carcountry;
+    }
+    getenginecc(): number {
+        return this.carenginecc;
+    }
+}
+
+var carobj:Car=new BMW();
+console.log(carobj.getname())
