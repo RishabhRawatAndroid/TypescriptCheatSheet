@@ -1,3 +1,4 @@
+///////////////////////////////////////////////////////////////////////////////////////////
 //Variable in TypeScript string,number,boolean,any
 //we have a let and var for declare variable
 //var for global scope and let for local scope
@@ -18,7 +19,7 @@ console.log(myname);
 console.log(age);
 console.log(notsure);
 console.log(check);
-
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 //Define the array in typescipt
 let list:number[]=[1,2,3,4,5,6,7,8,9];
@@ -56,7 +57,7 @@ for(var i = 0; i < myArray.length; i++) {
 
 //Define the array using the Array class
 let classarray=new Array(5,4,5,7,4,8,5,6,6,2,2,4,6,6);
-
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 //With tuples we can define what type of data (variable type) 
 //can be stored in every position ( or few starting positions ) inside of an array
@@ -71,14 +72,14 @@ x=[true,25];
 //x = [false, 0, 3, 3, true]; //error because length is more 
 
 console.log('-------------------------------------------------------')
-
+///////////////////////////////////////////////////////////////////////////////////////////////////////
 //Enum  enumeration type define the more mening full of same type
 //default value start with 0 and futher values incement by default
 enum days {sunday=1,monday,tuesday,wednesday,thusday,friday,saturday};
 let mon:number=days.monday;
 console.log(mon);
 console.log(days.friday);
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 //for....in statement
 
@@ -88,7 +89,7 @@ for(let y in myobj)
     console.log(myobj[y])
 }
 console.log("text "+myobj['a']) //output 11 and so on
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //function declartion in Typescript
 function printname(str:string):void //return type void and it is named function
@@ -116,7 +117,7 @@ let printanothername=function(str:string):string
 printanothername("Rishabh")
 
 
-//rest parameter function
+//rest parameter function or param same like a c#
 //rest parameters act as placeholders for multiple arguments of the same type.
 let restfuntion=function(...inttype:number[])
 {
@@ -134,20 +135,57 @@ function defaultfun(num1:number=0,num2:number=0):number //assign the num1 and nu
 return num1+num2;
 }
 
+//TypeScript introduces the question mark ? syntax to indicate optional parameters. 
+var concatStrings = function(a: string, b: string, c?: string) {
+    return a + b + c;
+   }
+   console.log(concatStrings("a", "b", "c"));
+   console.log(concatStrings("a", "b"));
 
+
+   //Callback function -> When we pass the function into the another function as a parameter
+   function myCallBack(text: string) {
+    console.log("inside myCallback " + text);
+   }
+
+   function callingFunction(initialText: string,callback: (text: string) => void)
+   {
+    callback(initialText);
+   }
+   callingFunction("myText", myCallBack);
+   //callingFunction("myText", "this is not a function");
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+//the ability to combine one or two types using the pipe symbol (|) to denote a Union Type.
+var uniontype:string|number='Hello';
+uniontype=25;
+//uniontype=true; //error because we cann only define two type of this union type
+//if we do like var uniontype:string|number|boolean  then the 168 line will be correct
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//type aliases which means we can also create our own custom type
+//Type aliases are denoted by using the type keyword
+type StringNumberOrBoolean = string | number | boolean;
+function addWithAliases(arg1: StringNumberOrBoolean,arg2: StringNumberOrBoolean): StringNumberOrBoolean {
+return "String|Number|Boolean Type Aliases";
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
 //lamda function very consice function  {The fat arrow notation/lambda notation (=>)}
 let lamdafun=(x:number):number=>{return x*x}
+////////////////////////////////////////////////////////////////////////////////////////////
+//DuckTyping in TypeScript
 
+var product={
+    id:"dv54d7sv4",
+    name:"Apple IPhone",
+    price:1000
+}
 
-// //TypeScript also supports defining a function with the built-in JavaScript constructor called Function ().
+console.log(product.id)
 
-// let mul=new Function()
-// {
-
-// }
-// mul()
-
-
+////////////////////////////////////////////////////////////////////////////////
 //Classes in the TypeScript
 class Car {
 

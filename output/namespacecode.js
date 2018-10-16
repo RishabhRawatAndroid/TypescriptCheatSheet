@@ -3,17 +3,14 @@
 //from namesapce we can origanise the various similar classes into a single namespace
 var Calculator;
 (function (Calculator) {
-    var SimpleCalculator = /** @class */ (function () {
-        function SimpleCalculator() {
-        }
-        SimpleCalculator.prototype.returnadd = function (num1, num2) {
+    class SimpleCalculator {
+        returnadd(num1, num2) {
             return num1 + num2;
-        };
-        SimpleCalculator.prototype.returnsubtract = function (num1, num2) {
+        }
+        returnsubtract(num1, num2) {
             return num1 - num2;
-        };
-        return SimpleCalculator;
-    }());
+        }
+    }
     Calculator.SimpleCalculator = SimpleCalculator;
     function addname(first, last) {
         return first + last;
