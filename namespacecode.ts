@@ -1,7 +1,7 @@
 //We can also declare the namespace same like the C# and java packages
 //from namesapce we can origanise the various similar classes into a single namespace
 
-namespace Calculator
+export namespace Calculator
 {
     export class SimpleCalculator
     {

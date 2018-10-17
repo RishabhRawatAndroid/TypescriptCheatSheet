@@ -1,3 +1,14 @@
+// all class functions can:
+// • Be strongly typed
+// • Use the any keyword to relax strong typing
+// • Have optional parameters
+// • Have default parameters
+// • Use argument arrays, or the rest parameter syntax
+// • Allow function callbacks and specify the function callback signature
+// • Allow function overloads
+
+
+
 //export means we can use this class in another file we need only one thing to impoet this class is 
 ///// import {User, AnotherClassName} from oops;
 export class User  
@@ -152,11 +163,93 @@ var carobj:Car=new BMW();
 console.log(carobj.getname())
 
 //For using the namespace code we use like
-/// <reference path="./namespacecode.ts"/>
-
-let getname=Calculator.addname('Rishabh', 'Rawat');
+//// <reference path="./namespacecode.ts"/>
+import * as Cal from "./namespacecode";
+let getname=Cal.Calculator.addname('Rishabh', 'Rawat');
 console.log(getname);
 
-let sum:Calculator.SimpleCalculator=new Calculator.SimpleCalculator();
+let sum:Cal.Calculator.SimpleCalculator=new Cal.Calculator.SimpleCalculator();
 console.log(sum.returnadd(10, 15));
 
+
+
+//property accessor 
+class SimpleClassWithAccessors {
+    private _id: number=0;
+    get id() {
+    return this._id;
+    }
+    set id(value: number) {
+    this._id = value;
+    }
+
+//static function
+// Static functions are functions that can be called on a class without having to create an
+// instance of the class
+static sayhello(params:string) {
+    console.log('hello '+params);
+}
+
+   }
+
+
+SimpleClassWithAccessors.sayhello("Rishabh")   
+var mySimpleAccClass = new SimpleClassWithAccessors();
+mySimpleAccClass.id = 1;
+console.log("id has the value of " + mySimpleAccClass.id);
+
+
+
+
+//Just for fun Linked list data structure  using generic
+class Node<T> {
+    constructor(public nextnode:Node<T>|null,public data:T){}
+    set setNextNode(value:Node<T>)
+    {this.nextnode=value;}
+
+    get getNextNode():Node<T>|null
+    {return this.nextnode;}
+
+    set setData(value:T)
+    {this.data=value;}
+
+    get getData():T
+    {return this.data}
+ }
+
+export class LinkedList<T>{
+
+     private head:Node<T> | undefined
+
+    public addFirst(data:T)
+    {
+        var newnode:Node<T>;
+        if(this.head==null)
+        {
+            newnode=new Node<T>(null,data);
+            this.head=newnode;
+        }
+        else
+        {
+            newnode=new Node<T>(this.head,data);
+            this.head=newnode
+        }
+    }
+
+    public iterateList()
+    {
+        let temp:any=this.head
+        while(temp!=null)
+        {
+            console.log(temp.data)
+            temp=temp.getNextNode
+        }
+    }
+}
+
+// works!
+var list = new LinkedList<number>();
+list.addFirst(1);
+list.addFirst(2);
+list.addFirst(3);
+list.iterateList();
